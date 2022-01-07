@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: go-architecture-sample
+  version: 1.0.0
+paths:
+  /user:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: ok
+    delete:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  format: int64
+      responses:
+        "200":
+          description: ok
+
+  /user/list:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  format: int64
+                title:
+                  type: string
+      responses:
+        "200":
+          description: ok
